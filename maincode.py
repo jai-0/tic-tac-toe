@@ -22,22 +22,22 @@ def game():
     input_valid=False
     boardDone= True
     count=0
-    for n in range(0,11):
+    for n in range(0,10):
         
         if n == 0 or n%2 == 0:
             move='X'
         else:
-            move='Y'
+            move='O'
            
-        if (theboard['7']==theboard['8']==theboard['9']=='X') or (theboard['7']==theboard['4']==theboard['1']=='X') or (theboard['1']==theboard['2']==theboard['3']=='X') or (theboard['3']==theboard['6']==theboard['9']=='X') or (theboard['7']==theboard['5']==theboard['3']=='X'): 
+        if (theboard['7']==theboard['8']==theboard['9']=='X') or (theboard['7']==theboard['4']==theboard['1']=='X') or (theboard['1']==theboard['2']==theboard['3']=='X') or (theboard['3']==theboard['6']==theboard['9']=='X') or (theboard['7']==theboard['5']==theboard['3']=='X') or (theboard['8']==theboard['5']==theboard['2']=='X') or (theboard['4']==theboard['5']==theboard['6']=='X') or (theboard['9']==theboard['5']==theboard['1']=='X'): 
             print('The winner is X')
             count=1
             break
-        elif (theboard['7']==theboard['8']==theboard['9']=='Y') or (theboard['7']==theboard['4']==theboard['1']=='Y') or (theboard['1']==theboard['2']==theboard['3']=='Y') or (theboard['3']==theboard['6']==theboard['9']=='Y') or (theboard['7']==theboard['5']==theboard['3']=='Y'): 
-            print('The winner is Y')
+        elif (theboard['7']==theboard['8']==theboard['9']=='O') or (theboard['7']==theboard['4']==theboard['1']=='O') or (theboard['1']==theboard['2']==theboard['3']=='O') or (theboard['3']==theboard['6']==theboard['9']=='O') or (theboard['7']==theboard['5']==theboard['3']=='O') or (theboard['8']==theboard['5']==theboard['2']=='O') or (theboard['4']==theboard['5']==theboard['6']=='O') or (theboard['9']==theboard['5']==theboard['1']=='O'): 
+            print('The winner is O')
             count=1
             break
-        elif n == 10 and count==0:
+        elif len(boxesDone)==9:
                 print("Nobody won, try again.")
                 break
         else:
@@ -46,7 +46,7 @@ def game():
             
         
             print (f"This is {move}'s move")
-            while input_valid== False or boardDone==True:
+            while input_valid==False or boardDone==True:
                 theinput=input('Please Select the Box Number you want to replace by entering the coressponding number(1,2,3,4,5,6,7,8,9): ')
                 
                 if theinput in correctInputs:
